@@ -7,4 +7,13 @@ class StaticPagesController < ApplicationController
 
   def addroute
   end
+
+  def busroute
+  end
+
+  def busdirection
+  end
+
+  def busstop
+  end
 end
