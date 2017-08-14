@@ -8,4 +8,12 @@
       </h1>
     </section>
   </aside>
+  <div class="col-md-8">
+    <% if @user.buses.any? %>
+      <h3>CTA Bus Routes (<%= @user.buses.count %>)</h3>
+      <ol class="buses">
+        <%= render @buses %>
+      </ol>
+    <% end %>
+  </div>
 </div>
