@@ -1,0 +1,1 @@
+http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=1e21e3f67ae346e3a30bdb2b162ed24f&stpid=<stop #>&max=5
