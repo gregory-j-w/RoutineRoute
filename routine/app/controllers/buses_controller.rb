@@ -2,7 +2,7 @@ class BusesController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
 
   def create
-    @mbus = current_user.buses.build(bus_params)
+    @bus = current_user.buses.build(bus_params)
     if @bus.save
       flash[:success] = "Route created!"
       redirect_to root_url

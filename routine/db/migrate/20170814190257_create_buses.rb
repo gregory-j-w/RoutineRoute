@@ -11,6 +11,5 @@ class CreateBuses < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    add_index :buses, [:user_id]
   end
 end
