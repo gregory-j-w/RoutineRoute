@@ -1,7 +1,6 @@
 <h2>
-<%= "#  " + @rt + " " + @dir = " Stops" %>
+<%= "#  " + @rt + " " + @rtdir + " Stops" %>
 </h2>
-
 <% @busstops.each do |s| %>
-  <%= link_to s["stpnm"], current_user, class: "btn btn-lg btn-primary" %>
+  <%= link_to s["stpnm"], bussave_path(rt: @rt, rtdir: @rtdir, stpid: s["stpid"], stpnm: s["stpnm"]), class: "btn btn-lg btn-primary" %>
 <% end %>

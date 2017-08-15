@@ -1,23 +1,27 @@
 Get All Routes:
-http://www.ctabustracker.com/bustime/api/v2/getroutes/?key=54sFweh2PbzUdD4hegTEwqpgk&format=json
+http://www.ctabustracker.com/bustime/api/v2/getroutes/?key=<KEY#>&format=json
 -> Save Route #, Route Name
-http://www.ctabustracker.com/bustime/api/v2/getroutes/?key=54sFweh2PbzUdD4hegTEwqpgk&format=json
+http://www.ctabustracker.com/bustime/api/v2/getroutes/?key=<KEY#>&format=json
 
 Get Direction of Selected Route
-http://www.ctabustracker.com/bustime/api/v2/getdirections/?key=54sFweh2PbzUdD4hegTEwqpgk&rt=<Route#>&format=json
+http://www.ctabustracker.com/bustime/api/v2/getdirections/?key=<KEY#>=<Route#>&format=json
 -> Save Direction
-http://www.ctabustracker.com/bustime/api/v2/getdirections/?key=54sFweh2PbzUdD4hegTEwqpgk&rt=1&format=json
+http://www.ctabustracker.com/bustime/api/v2/getdirections/?key=<KEY#>=1&format=json
 
 Get Stops for selected Route in selected Direction
-http://ctabustracker.com/bustime/api/v2/getstops?key=54sFweh2PbzUdD4hegTEwqpgk&rt=<Route#>&dir=<Direction>&format=json
+http://ctabustracker.com/bustime/api/v2/getstops?key=<KEY#>=<Route#>&dir=<Direction>&format=json
 -> Save Stop Id, Stop Name, Stop Lat, Stop Long
-http://ctabustracker.com/bustime/api/v2/getstops?key=54sFweh2PbzUdD4hegTEwqpgk&rt=1&dir=Northbound&format=json
+http://ctabustracker.com/bustime/api/v2/getstops?key=<KEY#>&rt=1&dir=Northbound&format=json
 
 User Names Route (ie "Commute to Work) Save rt#, rtnm, direction, stopid, stpnm to routes model
 
 
 Get predictions - pass route #, stop id#
-http://www.ctabustracker.com/bustime/api/v2/getpredictions?key=54sFweh2PbzUdD4hegTEwqpgk&rt=<Route#>&stpid=<Stop #>&top=3
+http://www.ctabustracker.com/bustime/api/v2/getpredictions?key=<KEY#>&rt=<Route#>&stpid=<Stop #>&top=3
 
 
-http://www.ctabustracker.com/bustime/api/v2/getpredictions?key=54sFweh2PbzUdD4hegTEwqpgk&rt=20&stpid=456&top=3
+http://www.ctabustracker.com/bustime/api/v2/getpredictions?key=<KEY#>&rt=20&stpid=456&top=3
+
+
+
+http://ctabustracker.com/bustime/api/v2/getstops?key=<KEY#>&stpid=9604&format=json

@@ -3,5 +3,5 @@
 </h2>
 
 <% @busdirections.each do |d| %>
-  <%= link_to d["dir"], busstop_path(@rt + "-" + d["dir"]), class: "btn btn-lg btn-primary" %>
+  <%= link_to d["dir"], busstop_path(rt: @rt, rtdir: d["dir"]), class: "btn btn-lg btn-primary" %>
 <% end %>

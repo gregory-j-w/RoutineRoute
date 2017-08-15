@@ -8,23 +8,25 @@ class BusesController < ApplicationController
   end
 
   def busdirection
-    @url = request.original_url
-    @uri = URI::parse(@url)
-    @rt = @uri.path.split('.')[1]
+    @rt = params[:rt]
     response = HTTParty.get('http://www.ctabustracker.com/bustime/api/v2/getdirections/?key=' + '54sFweh2PbzUdD4hegTEwqpgk' + '&rt=' + @rt + '&format=json')
     parseddirections = JSON.parse(response.body)
     @busdirections = parseddirections["bustime-response"]["directions"]
   end
 
   def busstop
-    @url = request.original_url
-    @uriurl = URI::parse(@url)
-    @businfo = @uriurl.path.split('.')[1]
-    @rt = @businfo.split("-")[0]
-    @dir = @businfo.split("-")[1]
-    response = HTTParty.get('http://ctabustracker.com/bustime/api/v2/getstops?key=' + '54sFweh2PbzUdD4hegTEwqpgk' + '&rt=' + @rt + '&dir=' + @dir + '&format=json')
+    @rt = params[:rt]
+    @rtdir = params[:rtdir]
+    response = HTTParty.get('http://ctabustracker.com/bustime/api/v2/getstops?key=' + '54sFweh2PbzUdD4hegTEwqpgk' + '&rt=' + @rt + '&dir=' + @rtdir + '&format=json')
     parsedstops = JSON.parse(response.body)
     @busstops = parsedstops["bustime-response"]["stops"]
+  end
+
+  def bussave
+    @rt = params[:rt]
+    @rtdir = params[:rtdir]
+    @stpid = params[:stpid]
+    @stpnm = params[:stpnm]
   end
 
   def create
