@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
-  get  '/busroute', to: 'static_pages#busroute'
-  get  '/busdirection', to: 'static_pages#busdirection'
-  get  '/busstop', to: 'static_pages#busstop'
+  get  '/busroute', to: 'buses#busroute'
+  get  '/busdirection', to: 'buses#busdirection'
+  get  '/busstop', to: 'buses#busstop'
 
   resources :users
   resources :buses,          only: [:create, :destroy]
