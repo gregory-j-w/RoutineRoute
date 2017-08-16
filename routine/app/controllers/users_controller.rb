@@ -5,9 +5,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @buses = @user.buses
-
-
-
     @bustimes = []
       @buses.each do |bus|
         response = HTTParty.get('http://www.ctabustracker.com/bustime/api/v2/getpredictions?key=54sFweh2PbzUdD4hegTEwqpgk&rt=' + bus.rt + '&stpid=' + bus.stpid + '&top=3&format=json')

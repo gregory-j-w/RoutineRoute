@@ -14,18 +14,20 @@
       <ul class="buses">
         <% @bustimes.each do |bus| %>
           <li>
-
+            <%= bus["bustime-response"]["prd"][0]["rt"]%>
             <%= bus["bustime-response"]["prd"][0]["stpnm"]%>
+            <%= bus["bustime-response"]["prd"][0]["rtdir"] + " to "%>
+            <%= bus["bustime-response"]["prd"][0]["des"]%>
             <%= bus["bustime-response"]["prd"][0] ? bus["bustime-response"]["prd"][0]["prdctdn"] : "n/a"%>
             <%= bus["bustime-response"]["prd"][1] ? bus["bustime-response"]["prd"][1]["prdctdn"] : "n/a"%>
             <%= bus["bustime-response"]["prd"][2] ? bus["bustime-response"]["prd"][2]["prdctdn"] : "n/a"%>
+            <%= link_to "Refresh Times", current_user %>
           </li>
-
         <%end%>
-        <button>refresh</button>
-
-        <!-- //link to refresh -->
       </ul>
     <% end %>
   </div>
+  <button >Refresh Times</button>
+
+
 </div>
