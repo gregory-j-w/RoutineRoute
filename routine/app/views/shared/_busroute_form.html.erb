@@ -1,0 +1,16 @@
+<h2><%= "Bus Route " + @rt %></h2>
+<h2><%= "Bus Stop: " + @stpnm%></h2>
+
+<%= form_for :bus do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label :name%>
+    <%= f.text_field :name, class: 'form-control' %>
+    <%= f.text_field :rt, :value => @rt %>
+    <%= f.text_field :rtnm, :value => @rtnm %>
+    <%= f.text_field :rtdir, :value => @rtdir %>
+    <%= f.text_field :stpid, :value => @stpid %>
+    <%= f.text_field :stpnm, :value => @stpnm %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

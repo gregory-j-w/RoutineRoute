@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get  '/busdirection', to: 'buses#busdirection'
   get  '/busstop', to: 'buses#busstop'
   get  '/bussave', to: 'buses#bussave'
+  post  '/bussave', to: 'buses#create'
 
   resources :users
   resources :buses,          only: [:create, :destroy]

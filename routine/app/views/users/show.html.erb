@@ -9,9 +9,13 @@
     </section>
   </aside>
   <div class="col-md-8">
+    <% if @user.buses.any? %>
     <h3>CTA Bus Routes</h3>
       <ol class="buses">
-        <%= render @buses %>
+        <% @buses.each do |bus| %>
+          <%= bus.rtnm %>
+        <%end%>
       </ol>
+      <% end %>
   </div>
 </div>

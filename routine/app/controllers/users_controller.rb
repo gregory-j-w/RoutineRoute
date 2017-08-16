@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @buses = @user.buses
+    
   end
 
   def new
@@ -52,7 +53,7 @@ class UsersController < ApplicationController
     end
 
     # Confirms an admin user.
-    def admin_user
-      redirect_to(root_url) unless current_user.admin?
-    end
+    # def admin_user
+    #   redirect_to(root_url) unless current_user.admin?
+    # end
 end

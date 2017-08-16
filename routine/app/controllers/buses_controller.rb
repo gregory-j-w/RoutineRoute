@@ -9,6 +9,7 @@ class BusesController < ApplicationController
 
   def busdirection
     @rt = params[:rt]
+    @rtnm = params[:rtnm]
     response = HTTParty.get('http://www.ctabustracker.com/bustime/api/v2/getdirections/?key=' + '54sFweh2PbzUdD4hegTEwqpgk' + '&rt=' + @rt + '&format=json')
     parseddirections = JSON.parse(response.body)
     @busdirections = parseddirections["bustime-response"]["directions"]
@@ -16,6 +17,7 @@ class BusesController < ApplicationController
 
   def busstop
     @rt = params[:rt]
+    @rtnm = params[:rtnm]
     @rtdir = params[:rtdir]
     response = HTTParty.get('http://ctabustracker.com/bustime/api/v2/getstops?key=' + '54sFweh2PbzUdD4hegTEwqpgk' + '&rt=' + @rt + '&dir=' + @rtdir + '&format=json')
     parsedstops = JSON.parse(response.body)
@@ -24,9 +26,11 @@ class BusesController < ApplicationController
 
   def bussave
     @rt = params[:rt]
+    @rtnm = params[:rtnm]
     @rtdir = params[:rtdir]
     @stpid = params[:stpid]
     @stpnm = params[:stpnm]
+
   end
 
   def create
@@ -44,7 +48,7 @@ class BusesController < ApplicationController
 
   private
 
-    def micropost_params
-      params.require(:micropost).permit(:content)
+    def bus_params
+      params.require(:bus).permit(:name, :rt, :rtnm, :rtdir, :stpid, :stpnm)
     end
 end
