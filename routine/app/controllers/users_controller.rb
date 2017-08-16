@@ -5,7 +5,20 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @buses = @user.buses
-    
+
+
+
+    @bustimes = []
+      @buses.each do |bus|
+        response = HTTParty.get('http://www.ctabustracker.com/bustime/api/v2/getpredictions?key=54sFweh2PbzUdD4hegTEwqpgk&rt=' + bus.rt + '&stpid=' + bus.stpid + '&top=3&format=json')
+        parsedbustimes = JSON.parse(response.body)
+        if parsedbustimes["bustime-response"]["prd"]
+          @bustimes.push(parsedbustimes)
+        end
+      end
+
+
+
   end
 
   def new
@@ -16,7 +29,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Welcome to Routine Route!"
       redirect_to @user
     else
       render 'new'
@@ -52,8 +65,4 @@ class UsersController < ApplicationController
       redirect_to(root_url) unless current_user?(@user)
     end
 
-    # Confirms an admin user.
-    # def admin_user
-    #   redirect_to(root_url) unless current_user.admin?
-    # end
 end

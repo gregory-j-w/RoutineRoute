@@ -30,7 +30,6 @@ class BusesController < ApplicationController
     @rtdir = params[:rtdir]
     @stpid = params[:stpid]
     @stpnm = params[:stpnm]
-
   end
 
   def create

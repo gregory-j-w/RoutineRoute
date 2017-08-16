@@ -6,11 +6,11 @@
   <div class="field">
     <%= f.label :name%>
     <%= f.text_field :name, class: 'form-control' %>
-    <%= f.text_field :rt, :value => @rt %>
-    <%= f.text_field :rtnm, :value => @rtnm %>
-    <%= f.text_field :rtdir, :value => @rtdir %>
-    <%= f.text_field :stpid, :value => @stpid %>
-    <%= f.text_field :stpnm, :value => @stpnm %>
+    <%= f.hidden_field :rt, :value => @rt %>
+    <%= f.hidden_field :rtnm, :value => @rtnm %>
+    <%= f.hidden_field :rtdir, :value => @rtdir %>
+    <%= f.hidden_field :stpid, :value => @stpid %>
+    <%= f.hidden_field :stpnm, :value => @stpnm %>
   </div>
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>

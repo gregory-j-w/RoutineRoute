@@ -11,11 +11,21 @@
   <div class="col-md-8">
     <% if @user.buses.any? %>
     <h3>CTA Bus Routes</h3>
-      <ol class="buses">
-        <% @buses.each do |bus| %>
-          <%= bus.rtnm %>
+      <ul class="buses">
+        <% @bustimes.each do |bus| %>
+          <li>
+
+            <%= bus["bustime-response"]["prd"][0]["stpnm"]%>
+            <%= bus["bustime-response"]["prd"][0] ? bus["bustime-response"]["prd"][0]["prdctdn"] : "n/a"%>
+            <%= bus["bustime-response"]["prd"][1] ? bus["bustime-response"]["prd"][1]["prdctdn"] : "n/a"%>
+            <%= bus["bustime-response"]["prd"][2] ? bus["bustime-response"]["prd"][2]["prdctdn"] : "n/a"%>
+          </li>
+
         <%end%>
-      </ol>
-      <% end %>
+        <button>refresh</button>
+
+        <!-- //link to refresh -->
+      </ul>
+    <% end %>
   </div>
 </div>
