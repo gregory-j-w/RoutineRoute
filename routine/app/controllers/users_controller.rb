@@ -6,17 +6,25 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @buses = @user.buses
     @bustimes = []
-      @buses.each do |bus|
-        response = HTTParty.get('http://www.ctabustracker.com/bustime/api/v2/getpredictions?key=54sFweh2PbzUdD4hegTEwqpgk&rt=' + bus.rt + '&stpid=' + bus.stpid + '&top=3&format=json')
-        parsedbustimes = JSON.parse(response.body)
-        if parsedbustimes["bustime-response"]["prd"]
-          @bustimes.push(parsedbustimes)
-        end
+    @buses.each do |bus|
+      response = HTTParty.get('http://www.ctabustracker.com/bustime/api/v2/getpredictions?key=54sFweh2PbzUdD4hegTEwqpgk&rt=' + bus.rt + '&stpid=' + bus.stpid + '&top=3&format=json')
+      parsedbustimes = JSON.parse(response.body)
+      if parsedbustimes["bustime-response"]["prd"]
+        @bustimes.push(parsedbustimes)
       end
-
-      @ltrains = @user.ltrains
     end
 
+    @ltrains = @user.ltrains
+    @ltraintimes = []
+    @ltrains.each do |ltrain|
+      response = HTTParty.get('http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=1e21e3f67ae346e3a30bdb2b162ed24f&rt=' + ltrain.rt + '&stpid=' + ltrain.stpId + '&outputType=JSON')
+      puts response
+      parsedltraintimes = JSON.parse(response.body)
+      if parsedltraintimes["ctatt"]["eta"]
+        @ltraintimes.push(parsedltraintimes)
+      end
+    end
+  end
 
   def new
     @user = User.new

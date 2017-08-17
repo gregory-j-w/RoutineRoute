@@ -1,37 +1,37 @@
-<% if @rt = "Red" %>
-  <%= link_to "Howard", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
-  <%= link_to "95th St", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+<% if params[:rt] == "Red" %>
+  <%= link_to "Howard", ltrainstation_path(rt: "Red", destNm: "Howard"), class: "btn btn-lg btn-primary" %>
+  <%= link_to "95th St", ltrainstation_path(rt: "Red", destNm: "95th St" ), class: "btn btn-lg btn-primary" %>
 
-<% elsif @rt = "Blue" %>
-  <%= link_to "O'Hare", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
-  <%= link_to "Forest Park", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
-
-
-<% elsif @rt = "Brn" %>
-  <%= link_to "Kimball", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
-  <%= link_to "Loop", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+<% elsif params[:rt] == "Blue" %>
+  <%= link_to "O'Hare", ltrainstation_path(rt: "Blue", destNm: "O'Hare"), class: "btn btn-lg btn-primary" %>
+  <%= link_to "Forest Park", ltrainstation_path(rt: "Blue", destNm: "Forest Park"), class: "btn btn-lg btn-primary" %>
 
 
-<% elsif @rt = "G" %>
-  <%= link_to "Harlem", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
-  <%= link_to "63rd/Ashland", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
-  <%= link_to "Cottage Grove", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+<% elsif params[:rt] == "Brn" %>
+  <%= link_to "Kimball", ltrainstation_path(rt: "Brn", destNm: "Kimball"), class: "btn btn-lg btn-primary" %>
+  <%= link_to "Loop", ltrainstation_path(rt: "Brn", destNm: "Loop"), class: "btn btn-lg btn-primary" %>
 
 
-<% elsif @rt = "Org" %>
-  <%= link_to "MDW", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
-  <%= link_to "Loop", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
-
-<% elsif @rt = "P" %>
-  <%= link_to "Linden", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
-  <%= link_to "Loop", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
-
-<% elsif @rt = "Pink" %>
-  <%= link_to "54th/Cermack", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
-  <%= link_to "Loop", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+<% elsif params[:rt] == "G" %>
+  <%= link_to "Harlem", ltrainstation_path(rt: "F", destNm: "Harlem"), class: "btn btn-lg btn-primary" %>
+  <%= link_to "63rd/Ashland", ltrainstation_path(rt: "G", destNm: "63rd/Ashland"), class: "btn btn-lg btn-primary" %>
+  <%= link_to "Cottage Grove", ltrainstation_path(rt: "G", destNm: "Cottage Grove"), class: "btn btn-lg btn-primary" %>
 
 
-<% else @rt = "Y" %>
-  <%= link_to "Dempster-Skokie", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
-  <%= link_to "Howard", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+<% elsif params[:rt] == "Org" %>
+  <%= link_to "MDW", ltrainstation_path(rt: "Org", destNm: "Midway" ), class: "btn btn-lg btn-primary" %>
+  <%= link_to "Loop", ltrainstation_path(rt: "Org", destNm: "Loop"), class: "btn btn-lg btn-primary" %>
+
+<% elsif params[:rt] == "P" %>
+  <%= link_to "Linden", ltrainstation_path(rt: "P", destNm: "Linden"), class: "btn btn-lg btn-primary" %>
+  <%= link_to "Loop", ltrainstation_path(rt: "P", destNm: "Loop"), class: "btn btn-lg btn-primary" %>
+
+<% elsif params[:rt] == "Pink" %>
+  <%= link_to "54th/Cermack", ltrainstation_path(rt: "Pink", destNm: "54th/Cermack"), class: "btn btn-lg btn-primary" %>
+  <%= link_to "Loop", ltrainstation_path(rt: "Pink", destNm: "Loop"), class: "btn btn-lg btn-primary" %>
+
+
+<% else params[:rt] == "Y" %>
+  <%= link_to "Dempster-Skokie", ltrainstation_path(rt: "Y", destNm: "Dempster-Skokie"), class: "btn btn-lg btn-primary" %>
+  <%= link_to "Howard", ltrainstation_path(rt: "Y", destNm: "Howard" ), class: "btn btn-lg btn-primary" %>
 <% end %>

@@ -1,0 +1,14 @@
+<h2><%= "L Line: " + @rt %></h2>
+<h2><%= "Direction: " + @destNm%></h2>
+<h2><%= "Stop: " + @staNm%></h2>
+
+<%= form_for :ltrain do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.hidden_field :rt, :value => @rt %>
+    <%= f.hidden_field :destNm, :value => @destNm %>
+    <%= f.hidden_field :stpId, :value => @stpId %>
+    <%= f.hidden_field :staNm, :value => @staNm %>
+  </div>
+  <%= f.submit "Save", class: "btn btn-primary" %>
+<% end %>

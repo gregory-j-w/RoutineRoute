@@ -43,6 +43,8 @@ class BusesController < ApplicationController
   end
 
   def destroy
+    @id = params[:id]
+    @bus = Bus.find(@id)
     @bus.destroy
     flash[:success] = "Route deleted"
     redirect_to request.referrer || current_user

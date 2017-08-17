@@ -12,7 +12,7 @@
     <% if @user.buses.any? %>
     <h3>CTA Bus Routes</h3>
       <ul class="buses">
-        <% @bustimes.each do |bus| %>
+        <% @bustimes.each_with_index do |bus, i| %>
           <li>
             <%= bus["bustime-response"]["prd"][0]["rt"]%>
             <%= bus["bustime-response"]["prd"][0]["stpnm"]%>
@@ -22,7 +22,7 @@
             <%= bus["bustime-response"]["prd"][1] ? bus["bustime-response"]["prd"][1]["prdctdn"] : "n/a"%>
             <%= bus["bustime-response"]["prd"][2] ? bus["bustime-response"]["prd"][2]["prdctdn"] : "n/a"%>
             <%= link_to "Refresh Times", current_user %>
-            <%= link_to "delete", @bus, method: :delete,
+            <%= link_to "delete", bus_path(@user.buses[i]), method: :delete,
                                        data: { confirm: "You sure?" } %>
           </li>
         <%end%>
@@ -33,11 +33,21 @@
     <% if @user.ltrains.any? %>
     <h3>L Routes</h3>
       <ul class="ltrains">
-        <% @ltraintimes.each do |ltrain| %>
+        <% @ltraintimes.each_with_index do |ltrain, t| %>
           <li>
+            <%= ltrain["ctatt"]["eta"][0]["rt"] + " to "%>
+            <%= ltrain["ctatt"]["eta"][0]["destNm"]%>
+            <%= ltrain["ctatt"]["eta"][0]["staNm"]%>
+            <%= ltrain["ctatt"]["eta"][0] ? ((DateTime.parse(ltrain["ctatt"]["eta"][0]["arrT"])- DateTime.parse(ltrain["ctatt"]["tmst"]))*24*60).to_i : "n/a"%>
+            <%= ltrain["ctatt"]["eta"][1] ? ((DateTime.parse(ltrain["ctatt"]["eta"][1]["arrT"])- DateTime.parse(ltrain["ctatt"]["tmst"]))*24*60).to_i  : "n/a"%>
+            <%= ltrain["ctatt"]["eta"][2] ? ((DateTime.parse(ltrain["ctatt"]["eta"][2]["arrT"])- DateTime.parse(ltrain["ctatt"]["tmst"]))*24*60).to_i  : "n/a"%>
+            <%= link_to "Refresh Times", current_user %>
+            <%= link_to "delete", ltrain_path(@user.ltrains[t]), method: :delete,
+                                       data: { confirm: "You sure?" } %>
           </li>
         <%end%>
       </ul>
     <% end %>
   </div>
+
 </div>
