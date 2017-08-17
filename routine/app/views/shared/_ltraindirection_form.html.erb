@@ -1,0 +1,37 @@
+<% if @rt = "Red" %>
+  <%= link_to "Howard", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+  <%= link_to "95th St", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+
+<% elsif @rt = "Blue" %>
+  <%= link_to "O'Hare", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+  <%= link_to "Forest Park", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+
+
+<% elsif @rt = "Brn" %>
+  <%= link_to "Kimball", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+  <%= link_to "Loop", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+
+
+<% elsif @rt = "G" %>
+  <%= link_to "Harlem", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+  <%= link_to "63rd/Ashland", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+  <%= link_to "Cottage Grove", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+
+
+<% elsif @rt = "Org" %>
+  <%= link_to "MDW", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+  <%= link_to "Loop", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+
+<% elsif @rt = "P" %>
+  <%= link_to "Linden", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+  <%= link_to "Loop", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+
+<% elsif @rt = "Pink" %>
+  <%= link_to "54th/Cermack", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+  <%= link_to "Loop", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+
+
+<% else @rt = "Y" %>
+  <%= link_to "Dempster-Skokie", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+  <%= link_to "Howard", ltrainstation_path(rt: @rt), class: "btn btn-lg btn-primary" %>
+<% end %>
