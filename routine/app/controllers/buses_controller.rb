@@ -43,11 +43,20 @@ class BusesController < ApplicationController
   end
 
   def destroy
+    @bus.destroy
+    flash[:success] = "Route deleted"
+    redirect_to request.referrer || current_user
   end
+
 
   private
 
     def bus_params
       params.require(:bus).permit(:name, :rt, :rtnm, :rtdir, :stpid, :stpnm)
     end
-end
+
+    def correct_user
+      @bus = current_user.buses.find_by(id: params[:id])
+      redirect_to root_url if @bus.nil?
+    end
+  end

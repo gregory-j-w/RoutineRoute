@@ -22,12 +22,22 @@
             <%= bus["bustime-response"]["prd"][1] ? bus["bustime-response"]["prd"][1]["prdctdn"] : "n/a"%>
             <%= bus["bustime-response"]["prd"][2] ? bus["bustime-response"]["prd"][2]["prdctdn"] : "n/a"%>
             <%= link_to "Refresh Times", current_user %>
+            <%= link_to "delete", @bus, method: :delete,
+                                       data: { confirm: "You sure?" } %>
           </li>
         <%end%>
       </ul>
     <% end %>
   </div>
-  <button >Refresh Times</button>
-
-
+  <div class="col-md-8">
+    <% if @user.ltrains.any? %>
+    <h3>L Routes</h3>
+      <ul class="ltrains">
+        <% @ltraintimes.each do |ltrain| %>
+          <li>
+          </li>
+        <%end%>
+      </ul>
+    <% end %>
+  </div>
 </div>

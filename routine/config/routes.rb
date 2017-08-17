@@ -14,7 +14,12 @@ Rails.application.routes.draw do
   get  '/busstop', to: 'buses#busstop'
   get  '/bussave', to: 'buses#bussave'
   post  '/bussave', to: 'buses#create'
+  get  '/ltrainroute', to: 'ltrains#ltrainroute'
+  get  '/ltraindestination', to: 'ltrains#ltraindestination'
+  get  '/ltrainstation', to: 'ltrains#ltrainstation'
+  get  '/ltrainsave', to: 'ltrains#ltrainsave'
 
   resources :users
   resources :buses,          only: [:create, :destroy]
+  resources :ltrains,        only: [:create, :destroy]
 end

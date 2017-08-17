@@ -14,9 +14,9 @@ class UsersController < ApplicationController
         end
       end
 
+      @ltrains = @user.ltrains
+    end
 
-
-  end
 
   def new
     @user = User.new
@@ -48,7 +48,6 @@ class UsersController < ApplicationController
   end
 
   private
-
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :password,
                                    :password_confirmation)

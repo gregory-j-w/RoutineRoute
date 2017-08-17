@@ -1,5 +1,9 @@
 <h1>CTA Bus Routes<h1>
 
+<ul>
 <% @busroutes.each do |r| %>
-  <%= link_to "#"  + r["rt"] + " " + r["rtnm"], busdirection_path(rt: r["rt"], rtnm: r["rtnm"]),  class: "btn btn-lg btn-primary" %>
+  <li>
+    <%= link_to "#"  + r["rt"] + " " + r["rtnm"], busdirection_path(rt: r["rt"], rtnm: r["rtnm"]),  class: "btn btn-lg btn-primary" %>
+  </li>
+</ul>
 <% end %>

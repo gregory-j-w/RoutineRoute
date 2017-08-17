@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :buses, dependent: :destroy
+  has_many :ltrains, dependent: :destroy
   attr_accessor :remember_token
   before_save { self.email = email.downcase }
   validates :first_name, presence: true, length: { maximum: 50 }

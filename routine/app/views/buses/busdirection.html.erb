@@ -2,6 +2,10 @@
 <%= "#  " + @rt + "  Route Direction" %>
 </h2>
 
-<% @busdirections.each do |d| %>
-  <%= link_to d["dir"], busstop_path(rt: @rt, rtnm: @rtnm, rtdir: d["dir"]), class: "btn btn-lg btn-primary" %>
-<% end %>
+<ul>
+  <% @busdirections.each do |d| %>
+    <li>
+      <%= link_to d["dir"], busstop_path(rt: @rt, rtnm: @rtnm, rtdir: d["dir"]), class: "btn btn-lg btn-primary" %>
+    </li>
+  <% end %>
+</ul>
