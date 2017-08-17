@@ -2,7 +2,7 @@ class BusesController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
 
   def busroute
-    response = HTTParty.get('http://www.ctabustracker.com/bustime/api/v2/getroutes/?key=54sFweh2PbzUdD4hegTEwqpgk&format=json')
+    response = HTTParty.get('http://www.ctabustracker.com/bustime/api/v2/getroutes/?key=' + ENV["CTA_BUS_API_KEY"] + '&format=json')
     parsedbuses = JSON.parse(response.body)
     @busroutes = parsedbuses["bustime-response"]["routes"]
   end
@@ -10,7 +10,7 @@ class BusesController < ApplicationController
   def busdirection
     @rt = params[:rt]
     @rtnm = params[:rtnm]
-    response = HTTParty.get('http://www.ctabustracker.com/bustime/api/v2/getdirections/?key=' + '54sFweh2PbzUdD4hegTEwqpgk' + '&rt=' + @rt + '&format=json')
+    response = HTTParty.get('http://www.ctabustracker.com/bustime/api/v2/getdirections/?key=' + ENV["CTA_BUS_API_KEY"] + '&rt=' + @rt + '&format=json')
     parseddirections = JSON.parse(response.body)
     @busdirections = parseddirections["bustime-response"]["directions"]
   end
@@ -19,7 +19,7 @@ class BusesController < ApplicationController
     @rt = params[:rt]
     @rtnm = params[:rtnm]
     @rtdir = params[:rtdir]
-    response = HTTParty.get('http://ctabustracker.com/bustime/api/v2/getstops?key=' + '54sFweh2PbzUdD4hegTEwqpgk' + '&rt=' + @rt + '&dir=' + @rtdir + '&format=json')
+    response = HTTParty.get('http://ctabustracker.com/bustime/api/v2/getstops?key=' + ENV["CTA_BUS_API_KEY"] + '&rt=' + @rt + '&dir=' + @rtdir + '&format=json')
     parsedstops = JSON.parse(response.body)
     @busstops = parsedstops["bustime-response"]["stops"]
   end

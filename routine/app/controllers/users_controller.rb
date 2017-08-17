@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @buses = @user.buses
     @bustimes = []
     @buses.each do |bus|
-      response = HTTParty.get('http://www.ctabustracker.com/bustime/api/v2/getpredictions?key=54sFweh2PbzUdD4hegTEwqpgk&rt=' + bus.rt + '&stpid=' + bus.stpid + '&top=3&format=json')
+      response = HTTParty.get('http://www.ctabustracker.com/bustime/api/v2/getpredictions?key=' + ENV["CTA_BUS_API_KEY"] + '&rt=' + bus.rt + '&stpid=' + bus.stpid + '&top=3&format=json')
       parsedbustimes = JSON.parse(response.body)
       if parsedbustimes["bustime-response"]["prd"]
         @bustimes.push(parsedbustimes)
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     @ltrains = @user.ltrains
     @ltraintimes = []
     @ltrains.each do |ltrain|
-      response = HTTParty.get('http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=1e21e3f67ae346e3a30bdb2b162ed24f&rt=' + ltrain.rt + '&stpid=' + ltrain.stpId + '&outputType=JSON')
+      response = HTTParty.get('http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=' + ENV["CTA_L_API_KEY"] + '&rt=' + ltrain.rt + '&stpid=' + ltrain.stpId + '&outputType=JSON')
       puts response
       parsedltraintimes = JSON.parse(response.body)
       if parsedltraintimes["ctatt"]["eta"]
@@ -61,12 +61,9 @@ class UsersController < ApplicationController
                                    :password_confirmation)
     end
 
-    # Before filters
-
     # Confirms the correct user.
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end
-
-end
+  end
