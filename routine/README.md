@@ -1,24 +1,33 @@
-# README
+# PROJECT 4
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Routine Route
 
-Things you may want to cover:
+Fourth project for WDI at General Assembly
 
-* Ruby version
+##User Stories
+  * User creates a profile and can add the routes they take every day - the
+  bus to work, the L home - wherever they go on a regular basis. With their routes
+  saved, they can easily see when their next bus or train will be at their stop.
 
-* System dependencies
+## Planning
+  Come soon....
 
-* Configuration
+## Technologies Used
+  * Ruby on Rails
+  * SCSS
+  * Assembly
+  * GIMP
 
-* Database creation
+## What is unfinished
+  * The L routes are a work in progress. The 95th bound Red line is functional,
+  but the remainder of the lines need to be coded into the program. The L API was
+  easy to use, but routes, directions and stations need to be stored in a Database
+  or hardcoded.
+  * Mobile deployment
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## What would you like to add
+  * Email verification
+  * Password change
+  * User location / display routes in order of nearest to furthest from user's
+  location.
