@@ -5,7 +5,7 @@
 <ul>
   <% @busdirections.each do |d| %>
     <li>
-      <%= link_to d["dir"], busstop_path(rt: @rt, rtnm: @rtnm, rtdir: d["dir"]), class: "btn btn-lg btn-primary" %>
+      <%= link_to d["dir"], busstop_path(rt: @rt, rtnm: @rtnm, rtdir: d["dir"]), class: "custom-button" %>
     </li>
   <% end %>
 </ul>

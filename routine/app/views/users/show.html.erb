@@ -1,53 +1,72 @@
 <% provide(:title, @user.first_name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
+<div class = "show-container">
+  <div class = "title-Container">
+    <h2 class = "title">My Routes</h2>
+  </div>
+  <div class = "user-container">
+    <div class = "user-flex">
+      <div class = "gravatar-image">
         <%= gravatar_for @user %>
-        <%= @user.first_name %>
-      </h1>
-    </section>
-  </aside>
-  <div class="col-md-8">
-    <% if @user.buses.any? %>
-    <h3>CTA Bus Routes</h3>
-      <ul class="buses">
-        <% @bustimes.each_with_index do |bus, i| %>
-          <li>
-            <%= bus["bustime-response"]["prd"][0]["rt"]%>
-            <%= bus["bustime-response"]["prd"][0]["stpnm"]%>
-            <%= bus["bustime-response"]["prd"][0]["rtdir"] + " to "%>
-            <%= bus["bustime-response"]["prd"][0]["des"]%>
-            <%= bus["bustime-response"]["prd"][0] ? bus["bustime-response"]["prd"][0]["prdctdn"] : "n/a"%>
-            <%= bus["bustime-response"]["prd"][1] ? bus["bustime-response"]["prd"][1]["prdctdn"] : "n/a"%>
-            <%= bus["bustime-response"]["prd"][2] ? bus["bustime-response"]["prd"][2]["prdctdn"] : "n/a"%>
-            <%= link_to "Refresh Times", current_user %>
-            <%= link_to "delete", bus_path(@user.buses[i]), method: :delete,
-                                       data: { confirm: "You sure?" } %>
-          </li>
-        <%end%>
-      </ul>
-    <% end %>
+      </div>
+      <div class = "user-name">
+        <h3><%= @user.first_name %></h3>
+      </div>
+    </div>
   </div>
-  <div class="col-md-8">
-    <% if @user.ltrains.any? %>
-    <h3>L Routes</h3>
-      <ul class="ltrains">
-        <% @ltraintimes.each_with_index do |ltrain, t| %>
-          <li>
-            <%= ltrain["ctatt"]["eta"][0]["rt"] + " to "%>
-            <%= ltrain["ctatt"]["eta"][0]["destNm"]%>
-            <%= ltrain["ctatt"]["eta"][0]["staNm"]%>
-            <%= ltrain["ctatt"]["eta"][0] ? ((DateTime.parse(ltrain["ctatt"]["eta"][0]["arrT"])- DateTime.parse(ltrain["ctatt"]["tmst"]))*24*60).to_i : "n/a"%>
-            <%= ltrain["ctatt"]["eta"][1] ? ((DateTime.parse(ltrain["ctatt"]["eta"][1]["arrT"])- DateTime.parse(ltrain["ctatt"]["tmst"]))*24*60).to_i  : "n/a"%>
-            <%= ltrain["ctatt"]["eta"][2] ? ((DateTime.parse(ltrain["ctatt"]["eta"][2]["arrT"])- DateTime.parse(ltrain["ctatt"]["tmst"]))*24*60).to_i  : "n/a"%>
-            <%= link_to "Refresh Times", current_user %>
-            <%= link_to "delete", ltrain_path(@user.ltrains[t]), method: :delete,
-                                       data: { confirm: "You sure?" } %>
-          </li>
-        <%end%>
-      </ul>
-    <% end %>
+  <div class = "route-container">
+    <div class = "route-flex">
+      <% if @user.buses.any? %>
+      <div class = "route-title">
+        <h3>CTA Bus Routes</h3>
+      </div>
+      <div class = "routes">
+        <ul>
+          <% @bustimes.each_with_index do |bus, i| %>
+          <div class = "route-ul">
+            <li class = "route-li">
+              <%= bus["bustime-response"]["prd"][0]["rt"]%>
+              <%= bus["bustime-response"]["prd"][0]["stpnm"]%>
+              <%= bus["bustime-response"]["prd"][0]["des"]%>
+              <%= bus["bustime-response"]["prd"][0] ? bus["bustime-response"]["prd"][0]["prdctdn"] : "n/a"%>
+              <%= bus["bustime-response"]["prd"][1] ? bus["bustime-response"]["prd"][1]["prdctdn"] : "n/a"%>
+              <%= bus["bustime-response"]["prd"][2] ? bus["bustime-response"]["prd"][2]["prdctdn"] : "n/a"%>
+              <%= link_to "Refresh Times", current_user %>
+              <%= link_to "delete", bus_path(@user.buses[i]), method: :delete,
+                                             data: { confirm: "You sure?" } %>
+            </li>
+          </div>
+          <%end%>
+        </ul>
+      </div>
+      <% end %>
+    </div>
   </div>
-
+  <div class="route-container">
+    <div class = "route-flex">
+      <% if @user.ltrains.any? %>
+     <div class = "route-title">
+        <h3>L Routes</h3>
+      </div>
+      <div class = "route-list">
+        <ul class = "route-ul">
+          <% @ltraintimes.each_with_index do |ltrain, t| %>
+          <div class = "route-container">
+            <li class = "route-li">
+              <%= ltrain["ctatt"]["eta"][0]["rt"] + " to "%>
+              <%= ltrain["ctatt"]["eta"][0]["destNm"]%>
+              <%= ltrain["ctatt"]["eta"][0]["staNm"]%>
+              <%= ltrain["ctatt"]["eta"][0] ? ((DateTime.parse(ltrain["ctatt"]["eta"][0]["arrT"])- DateTime.parse(ltrain["ctatt"]["tmst"]))*24*60).to_i : "n/a"%>
+              <%= ltrain["ctatt"]["eta"][1] ? ((DateTime.parse(ltrain["ctatt"]["eta"][1]["arrT"])- DateTime.parse(ltrain["ctatt"]["tmst"]))*24*60).to_i  : "n/a"%>
+              <%= ltrain["ctatt"]["eta"][2] ? ((DateTime.parse(ltrain["ctatt"]["eta"][2]["arrT"])- DateTime.parse(ltrain["ctatt"]["tmst"]))*24*60).to_i  : "n/a"%>
+              <%= link_to "Refresh Times", current_user %>
+              <%= link_to "delete", ltrain_path(@user.ltrains[t]), method: :delete,
+                                               data: { confirm: "You sure?" } %>
+            </li>
+         </div>
+          <%end%>
+        </ul>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>

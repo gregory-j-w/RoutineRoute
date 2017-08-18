@@ -3,7 +3,7 @@
 <ul>
 <% @busroutes.each do |r| %>
   <li>
-    <%= link_to "#"  + r["rt"] + " " + r["rtnm"], busdirection_path(rt: r["rt"], rtnm: r["rtnm"]),  class: "btn btn-lg btn-primary" %>
+    <%= link_to "#"  + r["rt"] + " " + r["rtnm"], busdirection_path(rt: r["rt"], rtnm: r["rtnm"]),  class: "custom-button" %>
   </li>
 </ul>
 <% end %>
