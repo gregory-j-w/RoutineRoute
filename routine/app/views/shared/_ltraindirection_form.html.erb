@@ -6,7 +6,6 @@
   <%= link_to "O'Hare", ltrainstation_path(rt: "Blue", destNm: "O'Hare"), class: "custom-button" %>
   <%= link_to "Forest Park", ltrainstation_path(rt: "Blue", destNm: "Forest Park"), class: "custom-button" %>
 
-
 <% elsif params[:rt] == "Brn" %>
   <%= link_to "Kimball", ltrainstation_path(rt: "Brn", destNm: "Kimball"), class: "custom-button" %>
   <%= link_to "Loop", ltrainstation_path(rt: "Brn", destNm: "Loop"), class: "custom-button" %>
@@ -29,7 +28,6 @@
 <% elsif params[:rt] == "Pink" %>
   <%= link_to "54th/Cermack", ltrainstation_path(rt: "Pink", destNm: "54th/Cermack"), class: "custom-button" %>
   <%= link_to "Loop", ltrainstation_path(rt: "Pink", destNm: "Loop"), class: "custom-button" %>
-
 
 <% else params[:rt] == "Y" %>
   <%= link_to "Dempster-Skokie", ltrainstation_path(rt: "Y", destNm: "Dempster-Skokie"), class: "custom-button" %>
