@@ -3,184 +3,6 @@
 
 /* universal */
 
-.main-body {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-content: space-between;
-  align-items: flex-start;
-}
-
-.main-left {
-  flex: 1 1 auto;
-  align-self: auto;
-}
-
-.main-center {
-  flex: 0 0 auto;
-  align-self: auto;
-  width: 600px;
-}
-
-.main-right {
-  flex: 1 1 auto;
-  align-self: auto;
-}
-
-.main-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-content: flex-start;
-  align-items: flex-start;
-}
-
-.main-logo {
-  width: 100%;
-  height: 400x;
-  flex: 0 0 auto;
-  align-self: auto;
-}
-
-.main-logo img {
-  height: auto;
-  width: auto;
-}
-
-.login {
-  flex: 1 1 auto;
-  align-self: auto;
-  height: 50px;
-  width: 600px;
-  align-items: center;
-}
-
-.register {
-  flex: 1 1 auto;
-  align-self: auto;
-  height: 50px;
-  width: 600px;
-  align-items: center;
-}
-
-.button {
-  width: 600px;
-  align-content: center;
-  margin: 20px 0;
-}
-
-.custom-button {
-  display:inline-block;
-  min-width: 550px;
-  background: #60c3ff;
-  border: solid #1f628d 2px;
-  border-radius: 2px;
-  font-family: Georgia;
-  color: #ffffff;
-  font-size: 30px;
-  text-decoration: none;
-  text-align: center;
-}
-
-.custom-button:hover {
-  background: #79cafc;
-  background-image: linear-gradient(to bottom, #79cafc, #449fdb);
-  text-decoration: none;
-}
-
-.show-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-content: center;
-  align-items: center;
-}
-
-.title-container {
-  flex: 0 0 auto;
-  align-self: center;
-  height: 100px;
-}
-
-.title {
-  font-size: 32px;
-  text-transform: uppercase;
-  padding: 20px 0 0 0;
-  margin: 0;
-  height: 100px;
-  padding: 50px;
-}
-
-.user-container {
-  flex: 0 0 auto;
-  align-self: flex-start;
-  height: 80px;
-  width: 600px;
-}
-
-.user-flex {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-content: flex-start;
-  align-items: flex-start;
-}
-
-.gravatar-image {
-  flex: 0 0 auto;
-  align-self: auto;
-}
-
-.user-name {
-  flex: 1 1 auto;
-  align-self: auto;
-}
-
-.route-container {
-  flex: 1 1 auto;
-  align-self: flex-start;
-}
-
-.route-flex {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-content: flex-start;
-  align-items: flex-start;
-}
-
-.route-title {
-  height: 50px;
-  flex: 0 0 auto;
-  align-self: flex-start;
-  align-items: flex-start;
-  margin: 0 0 0 20px;
-}
-
-.routes {
-  flex: 0 0 auto;
-  align-self: flex-start;
-  align-items: flex-start;
-}
-
-.route-ul {
-  flex: 0 0 auto;
-  align-self: flex-start;
-  align-items: flex-start;
-}
-
-.route-li {
-  flex: 0 0 auto;
-  align-self: flex-start;
-  align-items: flex-start;
-  padding: 5px;
-  width: 598px;
-}
 
 body {
   padding-top: 60px;
@@ -202,15 +24,28 @@ textarea {
   margin-bottom: 10px;
 }
 
-#gear {
-  height: 30px;
-  width: auto;
-  margin: 0px;
-  padding: 0px;
+.login-button, .register-button {
+    border: 1px solid #555555;
+    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+    color: #FFFFFF;
+    border-radius: 3px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    transition: all 200ms ease-in-out 0s;
+    white-space: nowrap;
+    font-family: "Gotham Rounded A","Gotham Rounded B",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    padding: 19px 39px 18px;
+    font-size: 18px;
+    background-color: #60c3ff;
+    width: 600px;
+    margin: 30px 0;
 }
 
-ul {
-  list-style: none;
+.login-button:hover, .register-button:hover {
+    background-color: #009fff;
+    border-color: #555555;
 }
 
 /* typography */
@@ -355,4 +190,177 @@ input {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+/* vews */
+
+/* shows */
+.show-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.show-left-div, .show-right-div {
+  flex: 1 1 auto;
+  align-self: auto;
+}
+
+.show-main-div {
+  flex: 0 0 auto;
+  align-self: center;
+  min-width: 600px;
+}
+
+.main-flex-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.logo-container {
+  flex: 1 1 auto;
+  align-self: center;
+  width: 600px;
+  height: auto;
+  margin: 30px 0 50px 0;
+}
+
+.login-container {
+  flex: 1 1 auto;
+  align-self: center;
+}
+
+.full-logo {
+  width: 600px;
+  height: auto;
+}
+
+/* show */
+
+.section-title {
+  flex: 0 0 auto;
+  align-self: center;;
+  height: 75px;
+  width: 100%;
+  border: 1px solid black;
+  font-size: 1.7em;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.routes-container {
+  flex: 1 1 auto;
+  align-self: flex-start;
+}
+
+.routes-title {
+  border: 1px solid black;
+  width: 600px;
+  height: 50px;
+  color: #555;
+  font-size: 1.3em;
+  text-transform: uppercase;
+}
+
+.route-ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.route-li {
+  flex: 1 1 auto;
+  align-self: flex-start;
+  list-style: none;
+}
+
+.route-flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+}
+
+.rt {
+  flex: 0 0 auto;
+  align-self: center;
+  border: 1px solid black;
+  height: 50px;
+  width: 50px;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.route-details {
+  flex: 1 1 auto;
+  align-self: center;
+}
+
+.dest {
+  border: 1px solid black;
+
+}
+
+.stop {
+  border: 1px solid black;
+
+}
+
+.time-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+
+
+}
+
+.time {
+  border: 1px solid black;
+  flex: 1 1 auto;
+  align-self: center;
+
+}
+
+.route-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+}
+
+.route-refresh-button {
+  border: 1px solid black;
+  flex: 0 0 auto;
+  align-self: center;
+  background-color: green;
+  width: 100px;
+  height: 50px;
+}
+
+.route-delete-button {
+  flex: 0 0 auto;
+  align-self: center;
+  background-color: red;
+  width: 100px;
+  height: 50px;
 }
