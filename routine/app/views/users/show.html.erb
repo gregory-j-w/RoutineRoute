@@ -30,21 +30,23 @@
                   <div class = "stop">
                     <%= bus["bustime-response"]["prd"][0]["stpnm"]%>
                   </div>
-                  <div class = "time-container">
+                </div>
+                <div class = "time-container">
+                  <div class = "time-flex-container">
                     <div class = "time">
-                      <%= bus["bustime-response"]["prd"][0] ? bus["bustime-response"]["prd"][0]["prdctdn"] : "n/a"%>
+                      <%= bus["bustime-response"]["prd"][0] ? bus["bustime-response"]["prd"][0]["prdctdn"] + " min" : "--"%>
                     </div>
                     <div class = "time">
-                      <%= bus["bustime-response"]["prd"][1] ? bus["bustime-response"]["prd"][1]["prdctdn"] : "n/a"%>
+                      <%= bus["bustime-response"]["prd"][1] ? bus["bustime-response"]["prd"][1]["prdctdn"] + " min" : "--"%>
                     </div>
                     <div class = "time">
-                      <%= bus["bustime-response"]["prd"][2] ? bus["bustime-response"]["prd"][2]["prdctdn"] : "n/a"%>
+                      <%= bus["bustime-response"]["prd"][2] ? bus["bustime-response"]["prd"][2]["prdctdn"] + " min" : "--"%>
                     </div>
                   </div>
                 </div>
                 <div class = "route-buttons">
                   <div class = "route-refresh-button">
-                    <%= link_to "Refresh Times", current_user %>
+                    <%= link_to "Refresh", current_user %>
                   </div>
                   <div class = "route-delete-button">
                     <%= link_to "delete", bus_path(@user.buses[i]), method: :delete,
@@ -64,6 +66,7 @@
       <div class = "routes-container">
         <div class = "routes-title">
           <h3>L Routes</h3>
+
         </div>
         <div class = "route-ul">
           <ul>
@@ -81,15 +84,17 @@
                   <div class = "stop">
                     <%= ltrain["ctatt"]["eta"][0]["staNm"]%>
                   </div>
-                  <div class = "time-container">
+                </div>
+                <div class = "time-container">
+                  <div class = "time-flex-container">
                     <div class = "time">
-                      <%= ltrain["ctatt"]["eta"][0] ? ((DateTime.parse(ltrain["ctatt"]["eta"][0]["arrT"])- DateTime.parse(ltrain["ctatt"]["tmst"]))*24*60).to_i : "n/a"%>
+                      <%= ltrain["ctatt"]["eta"][0] ? (((DateTime.parse(ltrain["ctatt"]["eta"][0]["arrT"])- DateTime.parse(ltrain["ctatt"]["tmst"]))*24*60).to_i).to_s + " min" : "--"%>
                     </div>
                     <div class = "time">
-                      <%= ltrain["ctatt"]["eta"][1] ? ((DateTime.parse(ltrain["ctatt"]["eta"][1]["arrT"])- DateTime.parse(ltrain["ctatt"]["tmst"]))*24*60).to_i  : "n/a"%>
+                      <%= ltrain["ctatt"]["eta"][1] ? (((DateTime.parse(ltrain["ctatt"]["eta"][1]["arrT"])- DateTime.parse(ltrain["ctatt"]["tmst"]))*24*60).to_i).to_s + " min" : "--"%>
                     </div>
                     <div class = "time">
-                      <%= ltrain["ctatt"]["eta"][2] ? ((DateTime.parse(ltrain["ctatt"]["eta"][2]["arrT"])- DateTime.parse(ltrain["ctatt"]["tmst"]))*24*60).to_i  : "n/a"%>
+                      <%= ltrain["ctatt"]["eta"][2] ? (((DateTime.parse(ltrain["ctatt"]["eta"][2]["arrT"])- DateTime.parse(ltrain["ctatt"]["tmst"]))*24*60).to_i).to_s + " min" : "--"%>
                     </div>
                   </div>
                 </div>

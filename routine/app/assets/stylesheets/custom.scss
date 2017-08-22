@@ -248,7 +248,7 @@ input {
   flex: 0 0 auto;
   align-self: center;;
   height: 75px;
-  width: 100%;
+  width: 600px;
   border: 1px solid black;
   font-size: 1.7em;
   color: #555;
@@ -293,13 +293,13 @@ input {
   justify-content: flex-start;
   align-content: center;
   align-items: center;
+  border: 1px solid black;
 }
 
 .rt {
   flex: 0 0 auto;
   align-self: center;
-  border: 1px solid black;
-  height: 50px;
+  height: 40px;
   width: 50px;
   align-items: center;
   justify-content: center;
@@ -312,31 +312,45 @@ input {
 }
 
 .dest {
-  border: 1px solid black;
-
+  width: 208px;
+  height: 20px;
 }
 
 .stop {
-  border: 1px solid black;
-
+  width: 200px;
+  height: 20px;
 }
 
 .time-container {
+  flex: 1 1 auto;
+  align-self: center;
+}
+
+.time-flex-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-content: center;
   align-items: center;
-
-
 }
 
 .time {
-  border: 1px solid black;
   flex: 1 1 auto;
   align-self: center;
+  font-family: sans;
+  font-size: 12px;
+  width: 100px;
+  height: 12px;
+  padding-left: 10px;
+}
 
+.time:first-child {
+  font-family: sans;
+  font-size: 14px;
+  width: 100px;
+  height: 14px;
+  padding-left: 10px;
 }
 
 .route-buttons {
@@ -349,12 +363,27 @@ input {
 }
 
 .route-refresh-button {
-  border: 1px solid black;
   flex: 0 0 auto;
   align-self: center;
   background-color: green;
   width: 100px;
-  height: 50px;
+  height: 40px;
+}
+
+.route-refresh-button a:link {
+  color: white;
+}
+
+.route-refresh-button a:link:visited {
+  color: white;
+}
+
+.route-delete-button a:link {
+  color: white;
+}
+
+.route-delete-button a:link:visited {
+  color: white;
 }
 
 .route-delete-button {
@@ -362,5 +391,5 @@ input {
   align-self: center;
   background-color: red;
   width: 100px;
-  height: 50px;
+  height: 40px;
 }
