@@ -1,10 +1,27 @@
-<h1>L Lines<h1>
-
-<%= link_to "Red", ltraindestination_path(rt: "Red"), class: "login-button" %>
-<%= link_to "Blue", ltraindestination_path(rt: "Blue"), class: "login-button" %>
-<%= link_to "Brown", ltraindestination_path(rt: "Brn"), class: "login-button" %>
-<%= link_to "Green", ltraindestination_path(rt: "G"), class: "login-button" %>
-<%= link_to "Orange", ltraindestination_path(rt: "Org"), class: "login-button" %>
-<%= link_to "Purple", ltraindestination_path(rt: "P"), class: "login-button" %>
-<%= link_to "Pink", ltraindestination_path(rt: "Pink"), class: "login-button" %>
-<%= link_to "Yellow", ltraindestination_path(rt: "Y"), class: "login-button" %>
+<div class = "show-container">
+  <div class = "show-left-div">
+  </div>
+  <div class = "show-main-div">
+    <div class = "main-flex-container">
+      <div class = "section-title">
+        <h2>L Lines<h2>
+      </div>
+      <div class = "login-container">
+        <div class = "button">
+          <ul class = "route-ul">
+            <li><%= link_to "Red", ltraindestination_path(rt: "Red"), class: "route-button" %></li>
+            <li><%= link_to "Blue", ltraindestination_path(rt: "Blue"), class: "route-button" %></li>
+            <li><%= link_to "Brown", ltraindestination_path(rt: "Brn"), class: "route-button" %></li>
+            <li><%= link_to "Green", ltraindestination_path(rt: "G"), class: "route-button" %></li>
+            <li><%= link_to "Orange", ltraindestination_path(rt: "Org"), class: "route-button" %></li>
+            <li><%= link_to "Purple", ltraindestination_path(rt: "P"), class: "route-button" %></li>
+            <li><%= link_to "Pink", ltraindestination_path(rt: "Pink"), class: "route-button" %></li>
+            <li><%= link_to "Yellow", ltraindestination_path(rt: "Y"), class: "route-button" %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class = "show-right-div">
+  </div>
+</div>

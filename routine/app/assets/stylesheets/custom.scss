@@ -46,6 +46,36 @@ textarea {
     border-color: #555555;
 }
 
+.route-button {
+  border: 1px solid #555555;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+  color: #FFFFFF;
+  border-radius: 3px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  transition: all 200ms ease-in-out 0s;
+  white-space: nowrap;
+  font-family: "Gotham Rounded A","Gotham Rounded B",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  padding: 19px 39px 18px;
+  font-size: 18px;
+  background-color: #60c3ff;
+  width: 600px;
+  margin: 0;
+}
+
+.route-button:hover {
+    background-color: #009fff;
+    border-color: #555555;
+}
+
+.route-ul {
+  list-style: none;
+}
+
+
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -89,6 +119,27 @@ p {
 #logo:hover {
   color: #fff;
   text-decoration: none;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: space-between;
+  align-items: center;
+}
+
+.nav-container-left, .nav-container-right {
+  flex: 1 1 auto;
+  align-self: auto;
+}
+
+.nav-container-main {
+  flex: 0 0 auto;
+  align-self: auto;
+  width: 600px;
+
 }
 
 /* footer */
@@ -247,7 +298,6 @@ input {
   align-self: center;;
   height: 75px;
   width: 600px;
-  border: 1px solid black;
   font-size: 1.7em;
   color: #555;
   text-transform: uppercase;
@@ -261,7 +311,6 @@ input {
 }
 
 .routes-title {
-  border: 1px solid black;
   width: 600px;
   height: 50px;
   color: #555;
@@ -282,6 +331,7 @@ input {
   flex: 1 1 auto;
   align-self: flex-start;
   list-style: none;
+  margin: 10px 0 0 0;
 }
 
 .route-flex-container {
@@ -291,7 +341,6 @@ input {
   justify-content: flex-start;
   align-content: center;
   align-items: center;
-  border: 1px solid black;
 }
 
 .rt {
@@ -350,6 +399,8 @@ input {
   height: 14px;
   padding-left: 10px;
 }
+
+
 
 .route-buttons {
   display: flex;
