@@ -11,7 +11,7 @@
           <ul class = "route-ul">
           <% @busroutes.each do |r| %>
             <li>
-              <%= link_to "#"  + r["rt"] + " " + r["rtnm"], busdirection_path(rt: r["rt"], rtnm: r["rtnm"]),  class: "route-button" %>
+              <%= link_to "#"  + r["rt"] + " " + r["rtnm"], busdirection_path(rt: r["rt"], rtnm: r["rtnm"]), class: "route-button" %>
             </li>
           <% end %>
           </ul>

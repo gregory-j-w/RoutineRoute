@@ -10,7 +10,39 @@
         <div class = "button">
           <section class="ltrainroute_form">
             <ul class = "route-ul">
-              <%= render 'ltrain-red-howard_form' %>
+              <% if params[:rt] == "Red" && params[:destNm] == "Howard"  %>
+                <%= render 'red-howard_form' %>
+              <% elsif params[:rt] == "Red" && [:destNm] == "95th St" %>
+                <%= render 'red-95th_form' %>
+              <% elsif params[:rt] == "Blue" && params[:destNm] == "O'Hare" %>
+                <%= render "blue-o'hare_form" %>
+              <% elsif params[:rt] == "Blue" && params[:destNm] == "Forest Park" %>
+                <%= render 'blue-forestpark_form' %>
+              <% elsif params[:rt] == "Brn" && params[:destNm] == "Kimball" %>
+                <%= render 'brown-kimball_form' %>
+              <% elsif params[:rt] == "Brn" && params[:destNm] == "Loop" %>
+                <%= render 'brown-loop_form' %>
+              <% elsif params[:rt] == "G" && params[:destNm] == "Harlem" %>
+                <%= render 'green-harlem_form' %>
+              <% elsif params[:rt] == "G" && params[:destNm] == "63rd/Ashland/Cottage Grove" %>
+                <%= render 'green-63rd_form' %>
+              <% elsif params[:rt] == "Org" && params[:destNm] == "Midway" %>
+                <%= render 'orange-midway_form' %>
+              <% elsif params[:rt] == "Org" && params[:destNm] == "Loop" %>
+                <%= render 'orange-loop_form' %>
+              <% elsif params[:rt] == "P" && params[:destNm] == "Linden" %>
+                <%= render 'purple-linden_form' %>
+              <% elsif params[:rt] == "P" && params[:destNm] == "Loop" %>
+                <%= render 'purple-loop_form' %>
+              <% elsif params[:rt] == "Pink" && params[:destNm] == "54th/Cermack" %>
+                <%= render 'pink-54th_form' %>
+              <% elsif params[:rt] == "Pink" && params[:destNm] == "Loop" %>
+                <%= render 'pink-loop_form' %>
+              <% elsif params[:rt] == "Y" && params[:destNm] == "Dempster-Skokie" %>
+                <%= render 'yellow-skokie_form' %>
+              <% else params[:rt] == "Y" && params[:destNm] == "Howard" %>
+                <%= render 'yellow-howard_form' %>
+              <% end %>
             </ul>
           </section>
         </div>

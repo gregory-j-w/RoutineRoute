@@ -10,15 +10,12 @@
   <li><%= link_to "Kimball", ltrainstation_path(rt: "Brn", destNm: "Kimball"), class: "route-button" %></li>
   <li><%= link_to "Loop", ltrainstation_path(rt: "Brn", destNm: "Loop"), class: "route-button" %></li>
 
-
 <% elsif params[:rt] == "G" %>
-  <li><%= link_to "Harlem", ltrainstation_path(rt: "F", destNm: "Harlem"), class: "route-button" %></li>
-  <li><%= link_to "63rd/Ashland", ltrainstation_path(rt: "G", destNm: "63rd/Ashland"), class: "route-button" %></li>
-  <li><%= link_to "Cottage Grove", ltrainstation_path(rt: "G", destNm: "Cottage Grove"), class: "route-button" %></li>
-
+  <li><%= link_to "Harlem", ltrainstation_path(rt: "G", destNm: "Harlem"), class: "route-button" %></li>
+  <li><%= link_to "63rd/Ashland/Cottage Grove", ltrainstation_path(rt: "G", destNm: "63rd/Ashland/Cottage Grove"), class: "route-button" %></li>
 
 <% elsif params[:rt] == "Org" %>
-  <li><%= link_to "MDW", ltrainstation_path(rt: "Org", destNm: "Midway" ), class: "route-button" %></li>
+  <li><%= link_to "Midway", ltrainstation_path(rt: "Org", destNm: "Midway" ), class: "route-button" %></li>
   <li><%= link_to "Loop", ltrainstation_path(rt: "Org", destNm: "Loop"), class: "route-button" %></li>
 
 <% elsif params[:rt] == "P" %>
