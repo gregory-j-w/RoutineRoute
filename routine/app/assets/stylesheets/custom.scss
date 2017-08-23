@@ -11,8 +11,6 @@ $purple-line: #522398;
 $pink-line: #e27ea6;
 $yellow-line: #f9e300;
 
-
-
 /* universal */
 body {
   padding-top: 60px;
@@ -138,6 +136,15 @@ p {
 .rr-logo {
   margin: 5px;
   float: left;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+}
+
+.rr-logo a:hover! {
+  color: white;
+  text-decoration: none;
 }
 
 /* footer */
