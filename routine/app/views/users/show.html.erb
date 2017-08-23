@@ -8,11 +8,15 @@
       <div class = "section-title">
         <h2>My Routes</h2>
       </div>
-
       <% if @user.buses.any? %>
       <div class = "routes-container">
         <div class = "routes-title">
-          <h3>CTA Bus Routes</h3>
+          <div class = "title-container">
+            <h3>CTA Bus Routes</h3>
+          </div>
+          <div class = "addroute-link">
+            <%= link_to image_tag("add.png"), root_path %>
+          </div>
         </div>
         <div class = "route-ul">
           <ul>
@@ -46,10 +50,10 @@
                 </div>
                 <div class = "route-buttons">
                   <div class = "route-refresh-button">
-                    <%= link_to "Refresh", current_user %>
+                    <%= link_to image_tag("refresh.png"), current_user %>
                   </div>
                   <div class = "route-delete-button">
-                    <%= link_to "delete", bus_path(@user.buses[i]), method: :delete,
+                    <%= link_to image_tag("delete.png"), bus_path(@user.buses[i]), method: :delete,
                                                                     data: { confirm: "You sure?" } %>
                   </div>
                 </div>
@@ -65,8 +69,12 @@
       <% if @user.ltrains.any? %>
       <div class = "routes-container">
         <div class = "routes-title">
-          <h3>L Routes</h3>
-
+          <div class = "title-container">
+            <h3>L Routes</h3>
+          </div>
+          <div class = "addroute-link">
+            <%= link_to image_tag("add.png"), root_path %>
+          </div>
         </div>
         <div class = "route-ul">
           <ul>
@@ -100,10 +108,10 @@
                 </div>
                 <div class = "route-buttons">
                   <div class = "route-refresh-button">
-                    <%= link_to "Refresh Times", current_user %>
+                    <%= link_to image_tag("refresh.png"), current_user %>
                   </div>
                   <div class = "route-delete-button">
-                    <%= link_to "delete", ltrain_path(@user.ltrains[t]), method: :delete,
+                    <%= link_to image_tag("delete.png"), ltrain_path(@user.ltrains[t]), method: :delete,
                                                                          data: { confirm: "You sure?" } %>
                   </div>
                 </div>

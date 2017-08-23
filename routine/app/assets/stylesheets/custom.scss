@@ -1,6 +1,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+$red-line: #c60c30;
+$blue-line: #00a1de;
+$brown-line: #62361b;
+$green-line: #009b3a;
+$orange-line: #f9461c;
+$purple-line: #522398;
+$pink-line: #e27ea6;
+$yellow-line: #f9e300;
+
+
+
 /* universal */
 body {
   padding-top: 60px;
@@ -103,22 +115,6 @@ p {
 
 /* header */
 
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-}
-
-#logo:hover {
-  color: #fff;
-  text-decoration: none;
-}
-
 .nav-container {
   display: flex;
   flex-direction: row;
@@ -137,6 +133,11 @@ p {
   flex: 0 0 auto;
   align-self: auto;
   width: 600px;
+}
+
+.rr-logo {
+  margin: 5px;
+  float: left;
 }
 
 /* footer */
@@ -313,6 +314,24 @@ input {
   color: #555;
   font-size: 1.3em;
   text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.title-container {
+  width: 100px;
+  flex: 1 1 auto;
+  align-self: flex-start;
+}
+
+.addroute-link {
+  flex: 1 1 auto;
+  align-self: flex-start;
+  width: 50px;
 }
 
 .route-ul {
@@ -408,34 +427,51 @@ input {
   align-items: center;
 }
 
+#red-line {
+  background-color: $red-line;
+}
+
+#blue-line {
+  background-color: $blue-line;
+}
+
+#brown-line {
+  background-color: $brown-line;
+}
+
+#green-line {
+  background-color: $green-line;
+}
+
+#orange-line {
+  background-color: $orange-line;
+}
+
+#purple-line {
+  background-color: $purple-line;
+}
+
+#pink-line {
+  background-color: $pink-line;
+}
+
+#yellow-line {
+  background-color: $yellow-line;
+  color: black;
+}
+
 .route-refresh-button {
   flex: 0 0 auto;
   align-self: center;
-  background-color: green;
-  width: 100px;
-  height: 40px;
-}
-
-.route-refresh-button a:link {
-  color: white;
-}
-
-.route-refresh-button a:link:visited {
-  color: white;
-}
-
-.route-delete-button a:link {
-  color: white;
-}
-
-.route-delete-button a:link:visited {
-  color: white;
+  width: 60px;
+  height: 50px;
+  margin: 0 5px;
 }
 
 .route-delete-button {
   flex: 0 0 auto;
   align-self: center;
-  background-color: red;
-  width: 100px;
-  height: 40px;
+  width: 60px;
+  height: 50px;
+  margin: 0 5px;
 }

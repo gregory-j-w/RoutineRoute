@@ -3,7 +3,9 @@
     <div class = "nav-container-left">
     </div>
     <div class="nav-container-main">
-      <%= link_to "Routine Route", current_user, id: "logo" %>
+      <div class = "rr-logo">
+        <%= link_to image_tag("RR-logo.png"), current_user, id: "logo" %>
+      </div>
       <nav>
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
