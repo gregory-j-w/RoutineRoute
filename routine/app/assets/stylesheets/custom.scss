@@ -11,6 +11,11 @@ $purple-line: #522398;
 $pink-line: #e27ea6;
 $yellow-line: #f9e300;
 
+$text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
+$logo-orange: #fe7200;
+
+$full-width: 750px;
+
 /* universal */
 
 * {
@@ -32,6 +37,10 @@ section {
 
 textarea {
   resize: vertical;
+}
+
+.container {
+  padding: 0;
 }
 
 .center {
@@ -62,7 +71,7 @@ textarea {
   font-size: 40px;
   text-transform: uppercase;
   background-color: #60c3ff;
-  width: 600px;
+  width: 650px;
 }
 
 .login-button {
@@ -91,7 +100,7 @@ textarea {
   font-weight: 700;
   font-size: 18px;
   background-color: #60c3ff;
-  width: 600px;
+  width: 650px;
 }
 
 .route-button:hover {
@@ -150,7 +159,7 @@ p {
 .nav-container-main {
   flex: 0 0 auto;
   align-self: auto;
-  width: 600px;
+  width: $full-width;
 }
 
 .rr-logo a {
@@ -181,12 +190,12 @@ footer {
   margin-top: 100px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: #fe7200;
+  color: $logo-orange;
   font-size: 20px;
 }
 
 footer a {
-  color: #fe7200;
+  color: $logo-orange;
 }
 
 footer a:hover {
@@ -198,7 +207,6 @@ footer small {
 }
 
 /* forms */
-
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
@@ -210,31 +218,43 @@ input, textarea, select, .uneditable-input {
 }
 
 .login-email-field {
-  margin: 250px 0 50px 0;
+  margin: 200px 0 50px 0;
 }
 
 .remember-me {
-  margin: 50px 0 0 0;
+  margin: 75px 0 0 0;
   span {
     margin: 0 0 0 50px;
-    color: black;
+    color: white;
+    text-shadow: $text-shadow;
   }
+}
+
+.register-firstname-field {
+  margin-top: 40px;
+}
+
+.register-login {
+  margin-left: 25px;
 }
 
 input[type=checkbox] {
   transform: scale(4);
-  margin: 20px 0 0 0;
-  padding-left: 20px;
+  margin: 20px 0 0 50px;
+  padding-left: 50px;
 }
 
 label {
   font-size: 36px;
+  font-weight: 400;
   color: white;
+  text-shadow: $text-shadow;
 }
 
 .register-link {
     font-size: 32px;
     color: white;
+    text-shadow: $text-shadow;
   }
 
 #error_explanation {
@@ -277,7 +297,7 @@ label {
 .show-main-div {
   flex: 0 0 auto;
   align-self: center;
-  min-width: 600px;
+  min-width: $full-width;
 }
 
 .main-flex-container {
@@ -287,12 +307,13 @@ label {
   justify-content: center;
   align-content: flex-start;
   align-items: flex-start;
+  background-color: rgba(196, 196, 195, 0.6);
 }
 
 .logo-container {
   flex: 1 1 auto;
   align-self: center;
-  width: 600px;
+  width: $full-width;
   height: auto;
   margin: 100px 0 100px 0;
 }
@@ -303,21 +324,26 @@ label {
 }
 
 .full-logo {
-  width: 600px;
+  width: $full-width;
   height: auto;
 }
 
 /* show */
-
 .section-title {
   flex: 0 0 auto;
   align-self: center;;
   height: 75px;
-  width: 600px;
-  font-size: 80px;
-  color: white;
+  width: $full-width;
+  margin-bottom: 100px;
+}
+
+.title {
+  font-size: 75px;
+  color: $logo-orange;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
+  text-shadow: $text-shadow;
+  padding: 30px 0 0 0;
 }
 
 .routes-container {
@@ -325,30 +351,47 @@ label {
   align-self: flex-start;
 }
 
-.routes-title {
-  width: 600px;
-  height: 50px;
-  color: #555;
-  font-size: 1.3em;
-  text-transform: uppercase;
+
+.title-container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-content: flex-start;
   align-items: flex-start;
+  width: $full-width;
+  height: 80px;
 }
 
-.title-container {
-  width: 100px;
+.routes-title {
   flex: 1 1 auto;
   align-self: flex-start;
+  margin: 7px 0 0 25px;
+  width: 500px;
+  h3 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
 }
 
 .addroute-link {
   flex: 1 1 auto;
-  align-self: flex-start;
-  width: 50px;
+  align-self: auto;
+  background-color: $logo-orange;
+  height: 80px;
+  width: 80px;
+  margin-right: 55px;
+  text-align: center;
+  justify-content: center;
+  padding-top: 15px;
+  a {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 34px;
+    color: white;
+    text-shadow: $text-shadow;
+  }
 }
 
 .route-ul {
@@ -364,7 +407,7 @@ label {
   flex: 1 1 auto;
   align-self: flex-start;
   list-style: none;
-  margin: 10px 0 0 0;
+  margin-left: 45px;
 }
 
 .route-flex-container {
@@ -374,31 +417,42 @@ label {
   justify-content: flex-start;
   align-content: center;
   align-items: center;
+  background-color: white;
+  height: 100px;
+  width: 650px;
 }
 
 .rt {
   flex: 0 0 auto;
   align-self: center;
-  height: 40px;
-  width: 50px;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-family: 'Saira Extra Condensed', sans-serif;
+  font-size: 44px;
+  text-align: center;
+  width: 80px;
+  margin-bottom: 10px;
 }
 
 .route-details {
   flex: 1 1 auto;
   align-self: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 10px;
+  width: 250px;
 }
 
 .dest {
-  width: 208px;
-  height: 20px;
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: 30px;
 }
 
 .stop {
-  width: 200px;
-  height: 20px;
+  font-family: 'Saira Extra Condensed', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
 }
 
 .time-container {
@@ -418,28 +472,119 @@ label {
 .time {
   flex: 1 1 auto;
   align-self: center;
-  font-family: sans;
-  font-size: 12px;
-  width: 100px;
-  height: 12px;
-  padding-left: 10px;
+  font-size: 20px;
 }
 
-.time:first-child {
-  font-family: sans;
-  font-size: 14px;
-  width: 100px;
-  height: 14px;
-  padding-left: 10px;
+.route-refresh-button {
+  flex: 0 0 auto;
+  align-self: center;
+  width: 60px;
+  height: 50px;
+  margin: 0 5px;
 }
 
-.route-buttons {
+.route-delete-button {
+  flex: 0 0 auto;
+  align-self: center;
+  width: 60px;
+  height: 50px;
+  margin: 0 5px;
+}
+
+.ctabus-button {
+  margin-bottom: 100px;
+}
+
+.l-button, .ctabus-button {
+  background: #0079c2;
+  background-image: linear-gradient(to bottom, #0079c2, #00568c);
+  border: 1px solid #555555;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+  color: #FFFFFF;
+  border-radius: 3px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: out;
+  text-shadow: 3px 3px 0px #666666;
+  box-shadow: 0px 1px 3px #666666;
+  transition: all 200ms ease-in-out 0s;
+  white-space: nowrap;
+  font-family: "Gotham Rounded A","Gotham Rounded B",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  padding: 19px 39px 18px;
+  font-size: 35px;
+  text-transform: uppercase;
+  background-color: #60c3ff;
+  width: 650px;
+}
+
+#l {
+  margin: 300px 0 50px 0;
+}
+
+#ctabus {
+  margin: 0 0 500px 0;
+}
+
+.l-button:hover, .ctabus-button:hover {
+  background-color: #009dff;
+  border-color: #555555;
+}
+
+.route-button {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-content: center;
   align-items: center;
+  background: #0079c2;
+  background-image: linear-gradient(to bottom, #0079c2, #00568c);
+  border: 1px solid #555555;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+  color: #FFFFFF;
+  border-radius: 3px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: out;
+  text-shadow: 3px 3px 0px #666666;
+  box-shadow: 0px 1px 3px #666666;
+  transition: all 200ms ease-in-out 0s;
+  white-space: nowrap;
+  font-family: "Gotham Rounded A","Gotham Rounded B",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  font-size: 35px;
+  text-transform: uppercase;
+  background-color: #60c3ff;
+  width: 650px;
+  height: 100px;
+  padding: 20px 0 0 0;
+  margin: 10px 0;
+}
+
+.busdirection {
+  list-style: none;
+  margin: 150px 0 300px 0;
+}
+
+.busstops {
+  list-style: none;
+  margin-top: 100px;
+}
+
+.savert, .savestop {
+  width: $full-width;
+  height: 100px;
+  font-family:  'Saira Condensed', sans-serif;
+  font-size: 50px;
+  text-align: center;
+  justify-content: center;
+  margin: 100px 0 0 0;
+}
+
+.route-save-button {
+  margin: 300px 0 300px 50px;
+  justify-content: center;
 }
 
 #red-line {
@@ -473,20 +618,4 @@ label {
 #yellow-line {
   background-color: $yellow-line;
   color: black;
-}
-
-.route-refresh-button {
-  flex: 0 0 auto;
-  align-self: center;
-  width: 60px;
-  height: 50px;
-  margin: 0 5px;
-}
-
-.route-delete-button {
-  flex: 0 0 auto;
-  align-self: center;
-  width: 60px;
-  height: 50px;
-  margin: 0 5px;
 }

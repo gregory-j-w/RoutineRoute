@@ -6,16 +6,16 @@
   <div class = "show-main-div">
     <div class = "main-flex-container">
       <div class = "section-title">
-        <h2>My Routes</h2>
+        <h2 class = "title">My Routes</h2>
       </div>
       <% if @user.buses.any? %>
       <div class = "routes-container">
-        <div class = "routes-title">
-          <div class = "title-container">
+        <div class = "title-container">
+          <div class = "routes-title">
             <h3>CTA Bus Routes</h3>
           </div>
           <div class = "addroute-link">
-            <%= link_to image_tag("add.png"), root_path %>
+            <%= link_to "Add", busroute_path %>
           </div>
         </div>
         <div class = "route-ul">
@@ -68,12 +68,12 @@
 
       <% if @user.ltrains.any? %>
       <div class = "routes-container">
-        <div class = "routes-title">
-          <div class = "title-container">
+        <div class = "title-container">
+          <div class = "routes-title">
             <h3>L Routes</h3>
           </div>
           <div class = "addroute-link">
-            <%= link_to image_tag("add.png"), root_path %>
+            <%= link_to "Add", ltrainroute_path %>
           </div>
         </div>
         <div class = "route-ul">

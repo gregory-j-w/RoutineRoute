@@ -1,20 +1,37 @@
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name, class: 'text-input' %>
+  <div class = "register-firstname-field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, class: 'text-input' %>
+  </div>
 
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name, class: 'text-input' %>
+  <div class = "register-lastname-field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, class: 'text-input' %>
+  </div>
 
-  <%= f.label :email %>
-  <%= f.email_field :email, class: 'text-input' %>
+  <div class = "register-email-field">
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'text-input' %>
+  </div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password, class: 'text-input' %>
+  <div class = "register-password-field">
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'text-input' %>
+  </div>
 
-  <%= f.label :password_confirmation, "Confirmation" %>
-  <%= f.password_field :password_confirmation, class: 'text-input' %>
+  <div class = "register-passwordconf-field">
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation, class: 'text-input' %>
+  </div>
 
-  <%= f.submit yield(:button_text), class: "login-button" %>
+  <div class = "register-login">
+    <%= f.submit yield(:button_text), class: "login-button" %>
+    <div class = "register-link">
+      <p>Already have an account? <%= link_to "Login!", login_path %></p>
+    </div>
+  </div>
+
+
 <% end %>

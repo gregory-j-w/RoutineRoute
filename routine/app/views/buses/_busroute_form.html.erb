@@ -1,8 +1,13 @@
-<h2><%= "Bus Route " + @rt %></h2>
-<h2><%= "Bus Stop: " + @stpnm%></h2>
 
-<%= form_for :bus do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
+<div class = "routesave">
+  <div class = "savert">
+    <p><%= "Bus Route " + @rt %></p>
+    <p><%= "Bus Stop: " + @stpnm%></p>
+  </div>
+</div>
+<div class = "route-save-button">
+  <%= form_for :bus do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.hidden_field :rt, :value => @rt %>
     <%= f.hidden_field :rtnm, :value => @rtnm %>
@@ -11,4 +16,5 @@
     <%= f.hidden_field :stpnm, :value => @stpnm %>
   </div>
   <%= f.submit "Save", class: "route-button" %>
-<% end %>
+  <% end %>
+</div>

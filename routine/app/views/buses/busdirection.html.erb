@@ -4,11 +4,11 @@
   <div class = "show-main-div">
     <div class = "main-flex-container">
       <div class = "section-title">
-        <h2> <%= "#  " + @rt + "  Route Direction" %> </h2>
+        <h2 class = "title"> <%= "Route Direction" %> </h2>
       </div>
       <div class = "login-container">
         <div class = "button">
-          <ul class = "route-ul">
+          <ul class = "busdirection">
             <% @busdirections.each do |d| %>
               <li>
                 <%= link_to d["dir"], busstop_path(rt: @rt, rtnm: @rtnm, rtdir: d["dir"]), class: "route-button" %>
