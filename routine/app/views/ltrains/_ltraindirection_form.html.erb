@@ -1,6 +1,6 @@
 <% if params[:rt] == "Red" %>
   <li><%= link_to "Howard", ltrainstation_path(rt: "Red", destNm: "Howard"), class: "route-button" %></li>
-  <li><%= link_to "95th St", ltrainstation_path(rt: "Red", destNm: "95th St" ), class: "route-button" %></li>
+  <li><%= link_to "95th St", ltrainstation_path(rt: "Red", destNm: "95th" ), class: "route-button" %></li>
 
 <% elsif params[:rt] == "Blue" %>
   <li><%= link_to "O'Hare", ltrainstation_path(rt: "Blue", destNm: "O'Hare"), class: "route-button" %></li>
