@@ -1,14 +1,19 @@
-<h2><%= "L Line: " + @rt %></h2>
-<h2><%= "Direction: " + @destNm%></h2>
-<h2><%= "Stop: " + @staNm%></h2>
-
-<%= form_for :ltrain do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.hidden_field :rt, :value => @rt %>
-    <%= f.hidden_field :destNm, :value => @destNm %>
-    <%= f.hidden_field :stpId, :value => @stpId %>
-    <%= f.hidden_field :staNm, :value => @staNm %>
+<div class = "routesave">
+  <div class = "savert">
+    <p><%= "L Line: " + @rt %></p>
+    <p><%= "Direction: " + @destNm%></p>
+    <p><%= "Stop: " + @staNm%></p>
   </div>
-  <%= f.submit "Save", class: "route-button" %>
-<% end %>
+</div>
+<div class = "route-save-button">
+  <%= form_for :ltrain do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+      <%= f.hidden_field :rt, :value => @rt %>
+      <%= f.hidden_field :destNm, :value => @destNm %>
+      <%= f.hidden_field :stpId, :value => @stpId %>
+      <%= f.hidden_field :staNm, :value => @staNm %>
+    </div>
+    <%= f.submit "Save", class: "route-button" %>
+  <% end %>
+</div>
