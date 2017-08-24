@@ -1,24 +1,41 @@
 <% provide(:title, "Log in") %>
-<h1>Log in</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: login_path) do |f| %>
-
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.label :remember_me, class: "checkbox inline" do %>
-        <%= f.check_box :remember_me %>
-        <span>Remember me on this computer</span>
-      <% end %>
-
-      <%= f.submit "Log in", class: "custom-button" %>
-    <% end %>
-
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+<div class = "show-container">
+  <div class = "show-left-div">
+  </div>
+  <div class = "show-main-div">
+    <div class = "main-flex-container">
+      <div class = "section-title">
+        <h2>Log In<h2>
+      </div>
+      <div class = "login-container">
+        <div class = "button">
+          <%= form_for(:session, url: login_path) do |f| %>
+            <div class = "login-email-field">
+              <%= f.label :email %>
+              <%= f.email_field :email, class: 'text-input', id: 'login-email-field' %>
+            </div>
+            <div class = "login-password-field">
+              <%= f.label :password %>
+              <%= f.password_field :password, class: 'text-input', id: 'login-password-field' %>
+            </div>
+            <div class = "remember-me">
+              <%= f.label :remember_me do %>
+              <div class = "checkbox">
+                <%= f.check_box :remember_me %>
+              </div>
+              <span id = "remember">Remember me on this computer</span>
+              <% end %>
+            </div>
+            <%= f.submit "Log in", class: "login-button" %>
+            <% end %>
+            <div class = "register-link">
+              <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class = "show-right-div">
   </div>
 </div>

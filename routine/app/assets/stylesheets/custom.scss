@@ -12,8 +12,18 @@ $pink-line: #e27ea6;
 $yellow-line: #f9e300;
 
 /* universal */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  padding-top: 60px;
+  padding-top: 200px;
+  background-image: url("background.png");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 section {
@@ -33,27 +43,39 @@ textarea {
 }
 
 .login-button, .register-button {
-    border: 1px solid #555555;
-    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
-    color: #FFFFFF;
-    border-radius: 3px;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    transition: all 200ms ease-in-out 0s;
-    white-space: nowrap;
-    font-family: "Gotham Rounded A","Gotham Rounded B",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    padding: 19px 39px 18px;
-    font-size: 18px;
-    background-color: #60c3ff;
-    width: 600px;
-    margin: 30px 0;
+  background: #0079c2;
+  background-image: linear-gradient(to bottom, #0079c2, #00568c);
+  border: 1px solid #555555;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+  color: #FFFFFF;
+  border-radius: 3px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: out;
+  text-shadow: 3px 3px 0px #666666;
+  box-shadow: 0px 1px 3px #666666;
+  transition: all 200ms ease-in-out 0s;
+  white-space: nowrap;
+  font-family: "Gotham Rounded A","Gotham Rounded B",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  padding: 19px 39px 18px;
+  font-size: 40px;
+  text-transform: uppercase;
+  background-color: #60c3ff;
+  width: 600px;
+}
+
+.login-button {
+  margin: 100px 0 25px 0;
+}
+
+.logout-button {
+  margin: 0 0 25px 0;
 }
 
 .login-button:hover, .register-button:hover {
-    background-color: #009fff;
-    border-color: #555555;
+  background-color: #009dff;
+  border-color: #555555;
 }
 
 .route-button {
@@ -65,14 +87,11 @@ textarea {
   text-align: center;
   text-decoration: none;
   transition: all 200ms ease-in-out 0s;
-  white-space: nowrap;
   font-family: "Gotham Rounded A","Gotham Rounded B",Helvetica,Arial,sans-serif;
   font-weight: 700;
-  padding: 19px 39px 18px;
   font-size: 18px;
   background-color: #60c3ff;
   width: 600px;
-  margin: 0;
 }
 
 .route-button:hover {
@@ -120,6 +139,7 @@ p {
   justify-content: center;
   align-content: space-between;
   align-items: center;
+  height: 125px;
 }
 
 .nav-container-left, .nav-container-right {
@@ -133,26 +153,40 @@ p {
   width: 600px;
 }
 
-.rr-logo {
-  margin: 5px;
+.rr-logo a {
+  margin: 0 0 0 5px;
   float: left;
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 700;
   color: white;
+  padding: 10px 0 0 0;
+}
+
+.rr-logo a:hover {
+  text-decoration: none;
+}
+
+.dropdown-toggle, #header-login {
+  font-size: 30px;
+  margin: 25px 0 0 0;
+}
+
+.dropdown-menu {
+  font-size: 30px;
 }
 
 /* footer */
-
 footer {
-  margin-top: 45px;
+  margin-top: 100px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: #777;
+  color: #fe7200;
+  font-size: 20px;
 }
 
 footer a {
-  color: #555;
+  color: #fe7200;
 }
 
 footer a:hover {
@@ -160,44 +194,7 @@ footer a:hover {
 }
 
 footer small {
-  float: left;
-}
-
-/* sidebar */
-
-aside {
-  section.user_info {
-    margin-top: 20px;
-  }
-  section {
-    padding: 10px 0;
-    margin-top: 20px;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
-    }
-    span {
-      display: block;
-      margin-bottom: 3px;
-      line-height: 1;
-    }
-    h1 {
-      font-size: 1.4em;
-      text-align: left;
-      letter-spacing: -1px;
-      margin-bottom: 3px;
-      margin-top: 0px;
-    }
-  }
-}
-
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
-.gravatar_edit {
-  margin-top: 15px;
+  float: right;
 }
 
 /* forms */
@@ -205,12 +202,40 @@ aside {
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
-  margin-bottom: 15px;
 }
 
-input {
-  height: auto !important;
+.text-input {
+  height: 100px;
+  font-size: 40px;
 }
+
+.login-email-field {
+  margin: 250px 0 50px 0;
+}
+
+.remember-me {
+  margin: 50px 0 0 0;
+  span {
+    margin: 0 0 0 50px;
+    color: black;
+  }
+}
+
+input[type=checkbox] {
+  transform: scale(4);
+  margin: 20px 0 0 0;
+  padding-left: 20px;
+}
+
+label {
+  font-size: 36px;
+  color: white;
+}
+
+.register-link {
+    font-size: 32px;
+    color: white;
+  }
 
 #error_explanation {
   color: red;
@@ -224,15 +249,6 @@ input {
   @extend .has-error;
   .form-control {
     color: $state-danger-text;
-  }
-}
-
-.checkbox {
-  margin-top: -10px;
-  margin-bottom: 10px;
-  span {
-    margin-left: 20px;
-    font-weight: normal;
   }
 }
 
@@ -278,7 +294,7 @@ input {
   align-self: center;
   width: 600px;
   height: auto;
-  margin: 30px 0 50px 0;
+  margin: 100px 0 100px 0;
 }
 
 .login-container {
@@ -298,11 +314,10 @@ input {
   align-self: center;;
   height: 75px;
   width: 600px;
-  font-size: 1.7em;
-  color: #555;
+  font-size: 80px;
+  color: white;
   text-transform: uppercase;
-  letter-spacing: -1px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .routes-container {
@@ -417,8 +432,6 @@ input {
   height: 14px;
   padding-left: 10px;
 }
-
-
 
 .route-buttons {
   display: flex;
