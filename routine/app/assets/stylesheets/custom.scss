@@ -295,11 +295,15 @@ label {
   width: $full-width;
   height: auto;
   margin: 100px 0 100px 0;
+  img {
+    padding-left: 75px;
+  }
 }
 
 .login-container {
   flex: 1 1 auto;
   align-self: center;
+
 }
 
 .full-logo {
